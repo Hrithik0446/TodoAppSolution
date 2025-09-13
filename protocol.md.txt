@@ -1,0 +1,18 @@
+# To-Do List TCP Protocol (JSON)
+
+## Add Item
+Client → { "action": "add", "description": "Buy milk" }
+Server → { "id": 1, "description": "Buy milk", "status": "Pending" }
+
+## Update Item
+Client → { "action": "update", "id": 1 }
+Server → { "id": 1, "description": "Buy milk", "status": "Completed" }
+
+## Get List
+Client → { "action": "get" }
+Server → [
+  { "id": 1, "description": "Buy milk", "status": "Pending" }
+]
+
+## Broadcast Update
+Server → { "event": "item_added", "id": 2, "description": "Read book", "status": "Pending" }
